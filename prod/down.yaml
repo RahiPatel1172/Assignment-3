@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Remove Gitea
+    kubernetes.core.k8s:
+      state: absent
+      src: gitea.yaml
+  - name: Remove MySQL
+    kubernetes.core.k8s:
+      state: absent
+      src: mysql.yaml
+  - name: "Remove kubernetes python package"
+    pip:
+      name: kubernetes
+      state: absent 

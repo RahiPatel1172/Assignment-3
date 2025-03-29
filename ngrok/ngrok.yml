@@ -1,0 +1,6 @@
+version: "3"
+tunnels:
+  gitea:
+    proto: http
+    addr: http://10.109.151.114:3000
+    host_header: rewrite 

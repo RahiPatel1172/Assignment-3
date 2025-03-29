@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+  - name: "Install kubernetes python package"
+    pip:
+      name: kubernetes
+      state: present
+  - name: Install MySQL
+    kubernetes.core.k8s:
+      state: present
+      src: mysql.yaml
+  - name: Install Gitea
+    kubernetes.core.k8s:
+      state: present
+      src: gitea.yaml 

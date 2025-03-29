@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+  - name: "Install ngrok"
+    pip:
+      name: pyngrok
+      state: present
+  - name: Expose Gitea via ngrok
+    command: ngrok http 3000
+    async: true
+    poll: 0 
